@@ -19,4 +19,9 @@ class Question extends Model
     {
         return $this->hasMany('App\Answer');
     }
+
+    public function tags()
+    {
+        return $this->hasMany('App\Tag');
+    }
 }
