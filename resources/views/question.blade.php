@@ -10,6 +10,15 @@
                     <div class="card-body">
 
                         {{$question->body}}
+                        <br><br>
+                        @forelse($question->tags as $tag)
+                           Tags: {{$tag->tagname}}
+
+
+                        @empty
+                            Tags: No Tags
+                        @endforelse
+
                     </div>
 
                     <div class="card-footer">

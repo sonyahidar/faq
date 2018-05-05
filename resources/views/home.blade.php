@@ -24,7 +24,16 @@
                                                 </small>
                                             </div>
                                             <div class="card-body">
-                                                <p class="card-text">{{$question->body}}</p>
+                                                <p class="card-text">{{$question->body}}
+                                                    <br><br>
+                                                    @forelse($question->tags as $tag)
+                                                        Tags: {{$tag->tagname}}
+
+
+                                                    @empty
+                                                        Tags: No Tags
+                                                    @endforelse
+                                                </p>
                                             </div>
                                             <div class="card-footer">
                                                 <p class="card-text">
