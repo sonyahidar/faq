@@ -5,22 +5,20 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Create Question</div>
+                    <div class="card-header">Add Tag</div>
                     <div class="card-body">
                         @if($edit === FALSE)
-                            {!! Form::model($question, ['action' => 'QuestionController@store']) !!}
+                            {!! Form::model($tag, ['route' => ['tags.store', $question], 'method' => 'post']) !!}
+
                         @else()
-                            {!! Form::model($question, ['route' => ['questions.update', $question->id], 'method' => 'patch']) !!}
+                            {!! Form::model($tag, ['route' => ['tags.update', $question, $tag], 'method' => 'patch']) !!}
                         @endif
                         <div class="form-group">
-                            {!! Form::label('body', 'Body') !!}
-                            {!! Form::text('body', $question->body, ['class' => 'form-control','required' => 'required']) !!}
+                            {!! Form::label('tagname', 'Tagname') !!}
+                            {!! Form::text('tagname', $tag->tagname, ['class' => 'form-control','required' => 'required']) !!}
                         </div>
                         <button class="btn btn-success float-right" value="submit" type="submit" id="submit">Save
                         </button>
-                            <a class="btn btn-primary" href="{{ route('tags.show',['question_id' => $question->id]) }}">
-                                Manage Tags
-                            </a>
                         {!! Form::close() !!}
                     </div>
 

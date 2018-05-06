@@ -11,12 +11,13 @@
 
                         {{$question->body}}
                         <br><br>
+                        Tags:
                         @forelse($question->tags as $tag)
-                           Tags: {{$tag->tagname}}
+                           {{$tag->tagname}}
 
 
                         @empty
-                            Tags: No Tags
+                             No Tags
                         @endforelse
 
                     </div>

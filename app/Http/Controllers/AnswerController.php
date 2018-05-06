@@ -78,7 +78,7 @@ class AnswerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($question,  $answer)
+    public function edit($question, $answer)
     {
         $answer = Answer::find($answer);
         $edit = TRUE;

@@ -32,12 +32,23 @@ Route::get('/questions/{question_id}/answers/{answer_id}/edit', 'AnswerControlle
 Route::post('/questions/{question_id}/answers/', 'AnswerController@store')->name('answers.store');
 Route::patch('/questions/{question_id}/answer/{answer_id}', 'AnswerController@update')->name('answers.update');
 Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@destroy')->name('answers.destroy');
+Route::get('/questions/{question_id}/edit/tags/create', 'TagController@create')->name('tags.create');
 
+Route::get('/questions/{question_id}/edit/tags/{tag_id}/edit', 'TagController@edit')->name('tags.edit');
+Route::post('/questions/{question_id}/edit/tags/', 'TagController@store')->name('tags.store');
+Route::patch('/questions/{question_id}/edit/tags/{tag_id}', 'TagController@update')->name('tags.update');
+Route::delete('/questions/{question_id}/edit/tags/{tag_id}', 'TagController@destroy')->name('tags.destroy');
+
+Route::get('/questions/{question_id}/edit/tags/show', 'TagController@show')->name('tags.show');
 
 Route::resources([
     'questions' => 'QuestionController',
 ]);
-
+/*
+Route::resources([
+    'tags' => 'TagController',
+]);
+**/
 
 
 
