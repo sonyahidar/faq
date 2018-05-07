@@ -18,7 +18,7 @@
             <br><br>
             @forelse($question->tags as $tag)
                 <div class="col-md-4">
-                    {{$tag->tagname}}
+                    {{$tag->tagname}} <br><br>
                 </div>
                 <div class="col-md-3">
                     <a class="btn btn-primary float-right" href="{{ route('tags.edit',['question_id'=> $question->id, 'tag_id'=> $tag->id ])}}">
